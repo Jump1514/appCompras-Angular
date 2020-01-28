@@ -80,7 +80,7 @@ presupuestoForm.controls.tipo.touched">
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!presupuestoForm.valid">Guardar Cambios</button>
       <a class="btn btn-danger" routerLink="/presupuestos">Cancelar</a>
-      <p class="alert alert-danger" *ngIf="!presupuestoForm.valid">
+      <p class="alert alert-danger" *ngIf="presupuestoForm.valid">
         Por favor complete todos los campos
       </p>
     </form>

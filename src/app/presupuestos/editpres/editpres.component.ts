@@ -37,7 +37,7 @@ export class EditpresComponent implements OnInit {
   }
 
   ngOnInit() {
-    //console.log('ssd6+4564');
+    // console.log('ssd6+4564');
     this.presupuestoForm = new FormGroup({
       proveedor: new FormControl ('', Validators.required),
       fecha: new FormControl('', Validators.required),
