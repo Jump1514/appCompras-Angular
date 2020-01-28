@@ -8,7 +8,7 @@
         <label for="proveedor">Proveedor</label>
         <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.proveedor.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.proveedor.invalid &&
-				presupuestoForm.controls.proveedor.touched"></i>
+              presupuestoForm.controls.proveedor.touched"></i>
         <input type="text" class="form-control" id="proveedor" formControlName="proveedor"
           [(ngModel)]="presupuesto.proveedor">
         <p class="alert alert-danger"
@@ -80,7 +80,7 @@ presupuestoForm.controls.tipo.touched">
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!presupuestoForm.valid">Guardar Cambios</button>
       <a class="btn btn-danger" routerLink="/presupuestos">Cancelar</a>
-      <p class="alert alert-danger" *ngIf="presupuestoForm.valid">
+      <p class="alert alert-danger" *ngIf="!presupuestoForm.valid">
         Por favor complete todos los campos
       </p>
     </form>
