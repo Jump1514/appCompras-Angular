@@ -13,10 +13,11 @@
             <th>IVA</th>
             <th class="text-right">Total</th>
             <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let presupuesto of presupuestos">
+        <tr *ngFor="let presupuesto of presupuestos; let i=index">
             <td>{{ presupuesto.proveedor }}</td>
             <td>{{ presupuesto.fecha }}</td>
             <td>{{ presupuesto.concepto }}</td>
@@ -25,6 +26,9 @@
             <td>{{ presupuesto.total }}</td>
             <td>
                 <button type="button" class="btn btn-success" [routerLink]="['/editpres',presupuesto.id]">Editar</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="eliminarPresupuesto(presupuesto.id,i)">Eliminar</button>
             </td>
         </tr>
     </tbody>

@@ -11,7 +11,7 @@ import { Presupuestos } from 'src/app/Model/presupuestos.model';
 })
 export class EditpresComponent implements OnInit {
   presupuestoForm: FormGroup;
-  presupuesto: Presupuestos;
+  presupuesto: any;
   base: any;
   tipo: any;
   iva: any = 0;
@@ -60,11 +60,11 @@ export class EditpresComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.presupuesto = this.savePresupuesto();
-    // this.presupuestoService.putPresupuesto( this.presupuesto, this.id )
-    // .subscribe(newpre => {
-    // this.router.navigate(['/presupuestos'])
-    // })
+    this.presupuesto = this.savePresupuesto();
+    this.presupuestoService.putPresupuesto( this.presupuesto, this.id )
+    .subscribe(newpre => {
+    this.router.navigate(['/presupuestos'])
+    })
     console.log(this.presupuestoForm);
     }
 

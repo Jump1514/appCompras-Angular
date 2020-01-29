@@ -47,10 +47,9 @@ export class PresupuestosService {
     return this.http.put(url, presupuesto);
   }
 
-  // delPresupuesto ( id$: string ) {
-  //   const url = `${ this.preURL }/${ id$ }.json`;
-  //   return this.http.delete( url )
-  //   .map( res => res.json());
-  //   }
+  delPresupuesto( id: string ) {
+    const url = `${ this.preURL }/${ id }.json`;
+    return this.http.delete(url);
+    }
 }
 

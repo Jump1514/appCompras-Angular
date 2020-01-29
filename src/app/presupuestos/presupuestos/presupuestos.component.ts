@@ -11,7 +11,7 @@ import { Presupuestos } from 'src/app/Model/presupuestos.model';
 })
 export class PresupuestosComponent implements OnInit {
 
-  presupuestos: Presupuestos [] = [];
+  presupuestos: Presupuestos[] = [];
 
   constructor(private presupuestosService: PresupuestosService) {
     this.presupuestosService.getPresupuestos().subscribe(presupuestos => {
@@ -21,5 +21,12 @@ export class PresupuestosComponent implements OnInit {
 
   ngOnInit() {
   }
+  eliminarPresupuesto(id, index) {
+    if (confirm('¿Quiere Eliminar?')) {
+      this.presupuestosService.delPresupuesto(id).subscribe(res => {
+        this.presupuestos.splice(index, 1);
+      });
+  }
 
+}
 }
